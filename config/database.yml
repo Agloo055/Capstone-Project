@@ -5,8 +5,8 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: agloolik
-  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
-  database: blog
+  password: <%= ENV['LEGO_APP_DATABASE_PASSWORD'] %>
+  database: lego
   timeout: 5000
 
 development:
