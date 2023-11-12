@@ -11,6 +11,9 @@ gem "sprockets-rails"
 # Use postgreSQL as the database for Active Record
 gem 'pg'
 
+# Use authlogic for authorization [https://github.com/binarylogic/authlogic]
+gem 'authlogic'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
