@@ -1,0 +1,2 @@
+module LegoHelper
+end

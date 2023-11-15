@@ -14,6 +14,12 @@ gem 'pg'
 # Authorization with bcrypt
 gem 'bcrypt', '~> 3.1.7'
 
+# HTTP requests support
+gem 'rest-client', '~> 2.1'
+
+# JSON
+gem 'json'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
