@@ -1,8 +1,8 @@
 module SearchData
     extend ActiveSupport::Concern
 
-    def piece_count
-        pieces = [0,500,1000,1500,2000,2500,3000,4000]
+    def part_count
+        parts = [0,500,1000,1500,2000,2500,3000,4000]
     end
 
     def year_count
