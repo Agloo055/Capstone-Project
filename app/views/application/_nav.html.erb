@@ -9,6 +9,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarText">
             <div class="navbar-nav">
                 <%= link_to "Set_test", lego_path("10323-1"), class: "nav-link" %>
+                <%= link_to "Sets", sets_path, class: "nav-link" %>
                 <% if current_user %>
                     <%= link_to "Sign Out", session_path(current_user), data: {turbo_method: :delete}, class: "nav-link" %>
                 <% else %>
