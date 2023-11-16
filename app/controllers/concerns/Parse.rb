@@ -1,11 +1,11 @@
 module Parse
     extend ActiveSupport::Concern
     def api_key
-        key = '2b4a692a7b7fe3df45cf9cf577447c74'
+        key = ENV['API_KEY']
     end
 
     def base_uri
-        uri = 'https://rebrickable.com/api/v3/lego'
+        uri = ENV['BASE_URI']
     end
 
     def parse_theme (theme_id)
