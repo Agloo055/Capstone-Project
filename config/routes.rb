@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
+  
   root "home#index"
 
   get "/", to: "home#index"
   get "/home/secret"
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users, only: [:index, :new, :create]
+  resources :users, only: [:index, :new, :create] do
+    resources :collections, only: [:index]
+    resources :collections_sets, path: '/collections/sets'
+  end
 
   resources :lego
   resources :sets
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
