@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  set_num: MyString
+  name: MyString
+  year: 1
+  theme_id: 1
+  num_parts: 1
+  set_img_url: MyString
+  set_url: MyString
+  user: one
+
+two:
+  set_num: MyString
+  name: MyString
+  year: 1
+  theme_id: 1
+  num_parts: 1
+  set_img_url: MyString
+  set_url: MyString
+  user: two

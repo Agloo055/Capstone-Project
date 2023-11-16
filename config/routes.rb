@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:index, :new, :create] do
     resources :collections, only: [:index]
-    resources :collections_sets, path: '/collections/sets'
+    resources :col_sets, path: '/collections/sets'
   end
 
   resources :lego

@@ -23,7 +23,20 @@
             </div>
         </div>
         <% if current_user %>
-            <%= link_to "Add to your collection!", "/", class: "btn btn-primary" %><br>
+            <%= form_with model: [ @user, @user.col_set.build ] do |form| %>
+                <p>
+                    <%= form.hidden_field :set_num, value: @data['set_num'] %>
+                    <%= form.hidden_field :name, value: @data['name'] %>
+                    <%= form.hidden_field :year, value: @data['year'] %>
+                    <%= form.hidden_field :theme_id, value: @data['theme_id'] %>
+                    <%= form.hidden_field :num_parts, value: @data['num_parts'] %>
+                    <%= form.hidden_field :set_img_url, value: @data['set_img_url'] %>
+                    <%= form.hidden_field :set_url, value: @data['set_url'] %>
+                </p>
+                <p>
+                    <%= form.submit "Add to your collection!", class: "btn btn-primary"%>
+                </p>
+            <% end %><br>
         <% else %>
             <div>Login to add to collection!</div>
         <% end %>
