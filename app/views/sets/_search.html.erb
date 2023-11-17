@@ -1,27 +1,31 @@
-<form action=<%=set_path(1)%>%>
-    <select name="min_year">
-        <option value=<%= nil %>>Min Year</option>
-        <% for year in years do %>
-            <option value=<%= year %>><%= year %></option>
-        <% end %>
-    </select>
-    <select name="max_year">
-        <option value=<%= nil %>>Max Year</option>
-        <% for year in years do %>
-            <option value=<%= year %>><%= year %></option>
-        <% end %>
-    </select>
-    <select name="min_parts">
-        <option value=<%= nil %>>Min Parts</option>
-        <% for part in parts do %>
-            <option value=<%= part %>><%= part %></option>
-        <% end %>
-    </select>
-    <select name="max_parts">
-        <option value=<%= nil %>>Max Parts</option>
-        <% for part in parts do %>
-            <option value=<%= part %>><%= part %></option>
-        <% end %>
-    </select>
-    <input type="submit">
-</form>
+<nav class="navbar navbar-dark bg-secondary ">
+    <div class="container-fluid justify-content-around">
+        <form action=<%=set_path(1)%>% class="d-flex input-control">
+            <select name="min_year" class="form-select">
+                <option value=<%= nil %>>Min Year</option>
+                <% for year in years do %>
+                    <option value=<%= year %>><%= year %></option>
+                <% end %>
+            </select>
+            <select name="max_year" class="form-select">
+                <option value=<%= nil %>>Max Year</option>
+                <% for year in years do %>
+                    <option value=<%= year %>><%= year %></option>
+                <% end %>
+            </select>
+            <select name="min_parts" class="form-select">
+                <option value=<%= nil %>>Min Parts</option>
+                <% for part in parts do %>
+                    <option value=<%= part %>><%= part %></option>
+                <% end %>
+            </select>
+            <select name="max_parts" class="form-select">
+                <option value=<%= nil %>>Max Parts</option>
+                <% for part in parts do %>
+                    <option value=<%= part %>><%= part %></option>
+                <% end %>
+            </select>
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+</nav>

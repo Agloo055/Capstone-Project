@@ -2,21 +2,38 @@
 
 <%= render "sets/search", years: @years, parts: @parts%>
 
-<div class="row">
+<nav class="navbar bg-light">
     <% if @data["previous"] != nil%>
         <div class="justify-content-left">
-            <%= link_to "Previous Page", set_path(@previous, min_year: @params[:min_year], max_year: @params[:max_year], min_parts: @params[:min_parts], max_parts: @params[:max_parts]), class: "btn btn-primary"%>
+            <%= link_to "Previous Page", set_path(@previous, min_year: @params[:min_year], max_year: @params[:max_year], min_parts: @params[:min_parts], max_parts: @params[:max_parts]), class: "btn btn-outline-dark"%>
         </div>
     <% end %>
     <% if @data["next"] != nil%>
         <div class="justify-content-right">
-            <%= link_to "Next Page", set_path(@next, min_year: @params[:min_year], max_year: @params[:max_year], min_parts: @params[:min_parts], max_parts: @params[:max_parts]), class: "btn btn-primary"%>
+            <%= link_to "Next Page", set_path(@next, min_year: @params[:min_year], max_year: @params[:max_year], min_parts: @params[:min_parts], max_parts: @params[:max_parts]), class: "btn btn-outline-dark"%>
         </div>
+    <% end %>
+</nav>
+
+<div class="d-flex flex-row flex-wrap justify-content-center container-fluid">
+    <% for set in @data['results'] %>
+        <button type="button" class="btn bg-light bg-gradient btn-outline-secondary m-2 shadow btn-primary">
+            <%= link_to lego_path(set['set_num']), class: "text-decoration-none text-muted" do%>
+                <%= render "sets/card", set: set %>
+            <% end %>
+        </button>
     <% end %>
 </div>
 
-<% for set in @data['results'] %>
-    <%= link_to lego_path(set['set_num']) do%>
-        <%= render "sets/card", set: set %>
+<nav class="navbar bg-light">
+    <% if @data["previous"] != nil%>
+        <div class="justify-content-left">
+            <%= link_to "Previous Page", set_path(@previous, min_year: @params[:min_year], max_year: @params[:max_year], min_parts: @params[:min_parts], max_parts: @params[:max_parts]), class: "btn btn-outline-dark"%>
+        </div>
     <% end %>
-<% end %>
+    <% if @data["next"] != nil%>
+        <div class="justify-content-right">
+            <%= link_to "Next Page", set_path(@next, min_year: @params[:min_year], max_year: @params[:max_year], min_parts: @params[:min_parts], max_parts: @params[:max_parts]), class: "btn btn-outline-dark"%>
+        </div>
+    <% end %>
+</nav>

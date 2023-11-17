@@ -1,5 +1,9 @@
 <div class="card-body">
-    <h1><%= data['name'] %> (<%= data['set_num'] %>)</h1>
+    <h1><%= data['name'] %> (<%= data['set_num'] %>)
+        <%if data['favorite'] == true %>
+            <span class='text-info'>F</span>
+        <% end %>
+    </h1>
 </div>
 <div class="align-self-center justify-content-center" style="width: 50%">
     <img src=<%= data['set_img_url']%> alt= <%= data['name'] %> class="card-img"/>

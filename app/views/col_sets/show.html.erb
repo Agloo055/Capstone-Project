@@ -2,4 +2,22 @@
 
 <div class="">
     <%= render "lego/info", data:@set%>
+    <%= form_with model: [ @user, @set ] do |form| %>
+        <p>
+            <%= form.hidden_field :favorite, value: !@set['favorite'] %>
+        </p>
+        <% if @set['favorite']%>
+            <p>
+                <%= form.submit "Unfavorite", class: "btn btn-warning"%>
+            </p>
+        <% else %>
+            <p>
+                <%= form.submit "Favorite", class: "btn btn-success"%>
+            </p>
+        <% end %>
+    <% end %>
+    <%= link_to "Destroy", user_col_set_path(@set), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+    }, class: "btn btn-danger" %>
 </div>
