@@ -1,8 +1,12 @@
 <%= render "application/nav" %>
 
 <h1>Sets</h1>
-<% for set in @sets %>
-    <%= link_to user_col_set_path(current_user, set['id']), class: "text-decoration-none text-reset" do%>
-        <%= render "sets/card", set: set%>
+<div class="d-flex flex-row flex-wrap justify-content-start container-fluid">
+    <% for set in @sets %>
+        <button type="button" class="btn bg-light bg-gradient btn-outline-secondary m-2 shadow btn-primary">
+            <%= link_to user_col_set_path(current_user, set['id']), class: "text-decoration-none text-reset" do%>
+                <%= render "sets/card", set: set%>
+            <% end %>
+        </button>
     <% end %>
-<% end %>
+</div>

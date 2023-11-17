@@ -15,14 +15,16 @@
     <% end %>
 </nav>
 
-<div class="d-flex flex-row flex-wrap justify-content-center container-fluid">
-    <% for set in @data['results'] %>
-        <button type="button" class="btn bg-light bg-gradient btn-outline-secondary m-2 shadow btn-primary">
-            <%= link_to lego_path(set['set_num']), class: "text-decoration-none text-muted" do%>
-                <%= render "sets/card", set: set %>
-            <% end %>
-        </button>
-    <% end %>
+<div class="justify-content-center">
+    <div class="d-flex flex-row flex-wrap justify-content-center container-fluid">
+        <% for set in @data['results'] %>
+            <button type="button" class="btn bg-light bg-gradient btn-outline-secondary m-2 shadow btn-primary">
+                <%= link_to lego_path(set['set_num']), class: "text-decoration-none text-muted" do%>
+                    <%= render "sets/card", set: set %>
+                <% end %>
+            </button>
+        <% end %>
+    </div>
 </div>
 
 <nav class="navbar bg-light">

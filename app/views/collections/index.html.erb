@@ -2,4 +2,15 @@
 
 <h1><%= current_user.name %>'s Collections</h1>
 
-<%= link_to "Sets", user_col_sets_path %>
+<div class="d-flex flex-row flex-wrap justify-content-center container-fluid">
+    <button type="button" class="btn bg-light bg-gradient btn-outline-secondary m-2 shadow btn-primary">
+        <%= link_to user_col_sets_path, class: "text-decoration-none text-muted" do%>
+            <div class="card" style="height: 250px; width: 250px;">
+                <div class="card-body">
+                    <h5>Sets Collection</h5>
+                    <img src=<%= @set['set_img_url']%> alt= <%=@set['name'] %> class="img-fluid" style="height: 150px; width: auto;"/>
+                </div>
+            </div>
+        <% end %>
+    </button>
+</div>
