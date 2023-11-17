@@ -2,22 +2,26 @@
 
 <div class="">
     <%= render "lego/info", data:@set%>
-    <%= form_with model: [ @user, @set ] do |form| %>
-        <p>
-            <%= form.hidden_field :favorite, value: !@set['favorite'] %>
-        </p>
-        <% if @set['favorite']%>
+    <div class="container-fluid d-flex align-items-center gap-3">
+        <%= form_with model: [ @user, @set ] do |form| %>
             <p>
-                <%= form.submit "Unfavorite", class: "btn btn-warning"%>
+                <%= form.hidden_field :favorite, value: !@set['favorite'] %>
             </p>
-        <% else %>
-            <p>
-                <%= form.submit "Favorite", class: "btn btn-success"%>
-            </p>
+            <% if @set['favorite']%>
+                <p>
+                    <%= form.submit "Unfavorite", class: "btn btn-warning"%>
+                </p>
+            <% else %>
+                <p>
+                    <%= form.submit "Favorite", class: "btn btn-success"%>
+                </p>
+            <% end %>
         <% end %>
-    <% end %>
-    <%= link_to "Destroy", user_col_set_path(@set), data: {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-    }, class: "btn btn-danger" %>
+        <%= link_to "Destroy", user_col_set_path(@set), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+        }, class: "btn btn-danger " %>
+    </div>
+
+    <%= link_to "Back to Sets", user_col_sets_path, class:"btn btn-outline-dark"%>
 </div>
