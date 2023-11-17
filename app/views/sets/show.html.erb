@@ -14,6 +14,7 @@
         </div>
     <% end %>
 </div>
+
 <% for set in @data['results'] %>
     <%= link_to lego_path(set['set_num']) do%>
         <%= render "sets/card", set: set %>

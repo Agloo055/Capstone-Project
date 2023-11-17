@@ -1,4 +1,6 @@
 class ColSetsController < ApplicationController
+  include Parse
+
   def index
     if current_user.blank?
       redirect_to root_path
@@ -8,7 +10,12 @@ class ColSetsController < ApplicationController
   end
 
   def show
-    
+    if current_user.blank?
+      redirect_to root_path
+    end
+    user = User.find(current_user.id)
+    @set = user.col_set.find(params[:id])
+    @theme = parse_theme(@set['theme_id'])
   end
 
   def create

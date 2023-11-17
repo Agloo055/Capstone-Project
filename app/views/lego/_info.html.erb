@@ -1,0 +1,22 @@
+<div class="card-body">
+    <h1><%= data['name'] %> (<%= data['set_num'] %>)</h1>
+</div>
+<div class="align-self-center justify-content-center" style="width: 50%">
+    <img src=<%= data['set_img_url']%> alt= <%= data['name'] %> class="card-img"/>
+</div>
+<div class="container">
+    <div class="row justify-content-start">
+        <div class="col-auto border">
+            <div>Number of Parts:</div>
+            <div><%= data['num_parts']%></div>
+        </div>
+        <div class="col-auto border">
+            <div>Theme:</div>
+            <div><%= @theme %></div>
+        </div>
+        <div class="col-auto border">
+            <div>Year:</div>
+            <div><%= data['year'] %></div>
+        </div>
+    </div>
+</div>

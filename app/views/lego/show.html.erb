@@ -1,45 +1,26 @@
 <%= render "application/nav" %>
-    <div class="">
-        <div class="card-body">
-            <h1><%= @data['name'] %> (<%= params[:id] %>)</h1>
-        </div>
-        <div class="align-self-center justify-content-center" style="width: 50%">
-            <img src=<%= @data['set_img_url']%> alt= <%= @data['name'] %> class="card-img"/>
-        </div>
-        <div class="container">
-            <div class="row justify-content-start">
-                <div class="col-auto border">
-                    <div>Number of Parts:</div>
-                    <div><%= @data['num_parts']%></div>
-                </div>
-                <div class="col-auto border">
-                    <div>Theme:</div>
-                    <div><%= @theme %></div>
-                </div>
-                <div class="col-auto border">
-                    <div>Year:</div>
-                    <div><%= @data['year'] %></div>
-                </div>
-            </div>
-        </div>
-        <% if current_user %>
-            <%= form_with model: [ @user, @user.col_set.build ] do |form| %>
-                <p>
-                    <%= form.hidden_field :set_num, value: @data['set_num'] %>
-                    <%= form.hidden_field :name, value: @data['name'] %>
-                    <%= form.hidden_field :year, value: @data['year'] %>
-                    <%= form.hidden_field :theme_id, value: @data['theme_id'] %>
-                    <%= form.hidden_field :num_parts, value: @data['num_parts'] %>
-                    <%= form.hidden_field :set_img_url, value: @data['set_img_url'] %>
-                    <%= form.hidden_field :set_url, value: @data['set_url'] %>
-                </p>
-                <p>
-                    <%= form.submit "Add to your collection!", class: "btn btn-primary"%>
-                </p>
-            <% end %><br>
-        <% else %>
-            <div>Login to add to collection!</div>
-        <% end %>
-        <%= link_to "For more information, click here!", @data['set_url']%>
-        <div class=""></div>
-    </div>
+
+<div class="">
+    <%= render "lego/info", data:@data%>
+    
+    <% if current_user %>
+        <%= form_with model: [ @user, @user.col_set.build ] do |form| %>
+            <p>
+                <%= form.hidden_field :set_num, value: @data['set_num'] %>
+                <%= form.hidden_field :name, value: @data['name'] %>
+                <%= form.hidden_field :year, value: @data['year'] %>
+                <%= form.hidden_field :theme_id, value: @data['theme_id'] %>
+                <%= form.hidden_field :num_parts, value: @data['num_parts'] %>
+                <%= form.hidden_field :set_img_url, value: @data['set_img_url'] %>
+                <%= form.hidden_field :set_url, value: @data['set_url'] %>
+            </p>
+            <p>
+                <%= form.submit "Add to your collection!", class: "btn btn-primary"%>
+            </p>
+        <% end %><br>
+    <% else %>
+        <div>Login to add to collection!</div>
+    <% end %>
+    <%= link_to "For more information, click here!", @data['set_url']%>
+    <div class=""></div>
+</div>
