@@ -2,6 +2,7 @@
 
 <h1><%= current_user.name %>'s Collections</h1>
 
+<% if @set%>
 <div class="d-flex flex-row flex-wrap justify-content-center container-fluid">
     <button type="button" class="btn bg-light bg-gradient btn-outline-secondary m-2 shadow btn-primary">
         <%= link_to user_col_sets_path, class: "text-decoration-none text-muted" do%>
@@ -14,3 +15,9 @@
         <% end %>
     </button>
 </div>
+<% else %>
+    <div class="container-fluid text-center">
+        <h1>No sets in your collection!</h1>
+        <%= link_to "To Sets", sets_path, class: "btn btn-primary" %>
+    </div>
+<% end %>
