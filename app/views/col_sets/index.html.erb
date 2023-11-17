@@ -1,2 +1,8 @@
-<h1>ColSets#index</h1>
-<p>Find me in app/views/col_sets/index.html.erb</p>
+<%= render "application/nav" %>
+
+<h1>Sets</h1>
+<% for set in @sets %>
+    <%= link_to user_col_set_path(current_user, set['set_num']) do%>
+        <%= render "sets/card", set: set%>
+    <% end %>
+<% end %>
