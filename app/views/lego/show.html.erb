@@ -1,6 +1,6 @@
 <%= render "application/nav" %>
 
-<div class="d-flex flex-column justify-content-center">
+<div class="d-flex flex-column justify-content-center text-center">
     <%= render "lego/info", data:@data%>
     
     <% if current_user %>
@@ -19,7 +19,7 @@
             </p>
         <% end %><br>
     <% else %>
-        <div>Login to add to collection!</div>
+        <div class="bg-light mx-auto d-flex text-danger m-3 p-2 fw-bold">Login to add to collection!</div>
     <% end %>
     <div class=""></div>
 </div>
