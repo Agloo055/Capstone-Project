@@ -4,7 +4,7 @@
 <% if current_user %>
   <h1>Welcome <%= current_user.name %>, to Collect-a-Brick!</h1>
 <% else %>
-  <h1>Welcome to Collect-a-Lego!</h1>
+  <h1>Welcome to Collect-a-Brick!</h1>
   <p><%= link_to 'Login', new_session_path %> is required to save sets to your collection.</p>
 <% end %>
 </div>
