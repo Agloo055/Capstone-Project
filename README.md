@@ -31,7 +31,6 @@ Note: some of these might be automatically installed with others
 
 #### Create a config/local_env.yml and put following keys:
 - API_KEY (get from https://rebrickable.com/api/)
-- BASE_URI (https://rebrickable.com/api/v3/lego)
 - LEGO_APP_DATABASE_PASSWORD (your set psql password)
 
 #### Create the databases in postgres by running:

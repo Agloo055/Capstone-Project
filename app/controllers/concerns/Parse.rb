@@ -5,7 +5,7 @@ module Parse
     end
 
     def base_uri
-        uri = ENV['BASE_URI']
+        uri = 'https://rebrickable.com/api/v3/lego'
     end
 
     def parse_theme (theme_id)
