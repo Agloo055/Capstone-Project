@@ -1,8 +1,10 @@
 <%= render "application/nav" %>
 
+<div class="justify-content-center text-center">
 <% if current_user %>
-  <h1>Welcome, <%= current_user.name %></h1>
+  <h1>Welcome <%= current_user.name %>, to Collect-a-Brick!</h1>
 <% else %>
-  <h1>This is the index page</h1>
-  <%= link_to 'Login', new_session_path %><br>
+  <h1>Welcome to Collect-a-Lego!</h1>
+  <p><%= link_to 'Login', new_session_path %> is required to save sets to your collection.</p>
 <% end %>
+</div>
