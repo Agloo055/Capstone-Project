@@ -1,10 +1,8 @@
 <div class="card" style="height: 250px; width: 250px;">
     <div class="card-body">
-        <h5><%= set['name'] %> (<%= set['set_num'] %>)
-            <%if set['favorite'] == true %>
-                <span class='text-info'>F</span>
-            <% end %>
-        </h5>
+        <%if set['favorite'] == true %><span class='text-info'><% end %>
+            <h5><%= set['name'] %> (<%= set['set_num'] %>)</h5>
+        <%if set['favorite'] == true %></span><% end %>
         <img src=<%= set['set_img_url']%> alt= <%=set['name'] %> class="img-fluid" style="height: 150px; width: auto;"/>
     </div>
 </div>

@@ -1,26 +1,27 @@
 <div class="card-body">
-    <h1><%= data['name'] %> (<%= data['set_num'] %>)
-        <%if data['favorite'] == true %>
-            <span class='text-info'>F</span>
-        <% end %>
-    </h1>
+    <%if data['favorite'] == true %><span class='text-info'><% end %>
+    <h1><%= data['name'] %> (<%= data['set_num'] %>)</h1>
+    <%if data['favorite'] == true %></span><% end %>
 </div>
 <div class="align-self-center justify-content-center" style="width: 50%">
-    <img src=<%= data['set_img_url']%> alt= <%= data['name'] %> class="card-img"/>
+    <img src=<%= data['set_img_url']%> alt= <%= data['name'] %> class="card-img img-fluid"/>
 </div>
-<div class="container">
-    <div class="row justify-content-start">
+<div class="container justify-content-center">
+    <div class="d-flex row justify-content-center align-items-stretch align-items-center">
         <div class="col-auto border">
-            <div>Number of Parts:</div>
-            <div><%= data['num_parts']%></div>
+            <div class="fw-bold text-center">Number of Parts:</div>
+            <div class="text-center"><%= data['num_parts']%></div>
         </div>
         <div class="col-auto border">
-            <div>Theme:</div>
-            <div><%= @theme %></div>
+            <div class="fw-bold text-center">Theme:</div>
+            <div class="text-center"><%= @theme %></div>
         </div>
         <div class="col-auto border">
-            <div>Year:</div>
-            <div><%= data['year'] %></div>
+            <div class="fw-bold text-center">Year:</div>
+            <div class="text-center"><%= data['year'] %></div>
+        </div>
+        <div class="col-auto border">
+            <%= link_to "More Info", data['set_url'], class:"btn btn-info"%>
         </div>
     </div>
 </div>

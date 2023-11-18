@@ -1,10 +1,10 @@
 <%= render "application/nav" %>
 
-<div class="">
+<div class="d-flex flex-column justify-content-center">
     <%= render "lego/info", data:@data%>
     
     <% if current_user %>
-        <%= form_with model: [ @user, @user.col_set.build ] do |form| %>
+        <%= form_with model: [ @user, @user.col_set.build ], class:" text-center" do |form| %>
             <p>
                 <%= form.hidden_field :set_num, value: @data['set_num'] %>
                 <%= form.hidden_field :name, value: @data['name'] %>
@@ -21,6 +21,5 @@
     <% else %>
         <div>Login to add to collection!</div>
     <% end %>
-    <%= link_to "For more information, click here!", @data['set_url']%>
     <div class=""></div>
 </div>
