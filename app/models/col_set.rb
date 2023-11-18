@@ -1,4 +1,4 @@
 class ColSet < ApplicationRecord
   belongs_to :user
-  default_scope { order(favorite: :desc)}
+  default_scope { order(favorite: :asc)}
 end
