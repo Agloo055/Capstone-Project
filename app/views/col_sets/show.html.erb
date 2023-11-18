@@ -17,7 +17,7 @@
                 </p>
             <% end %>
         <% end %>
-        <%= link_to "Destroy", user_col_set_path(@set), data: {
+        <%= link_to "Remove", user_col_set_path(@set), data: {
             turbo_method: :delete,
             turbo_confirm: "Are you sure?"
         }, class: "btn btn-danger " %>
