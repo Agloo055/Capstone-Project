@@ -4,12 +4,12 @@
 
 <nav class="navbar bg-light">
     <% if @data["previous"] != nil%>
-        <div class="justify-content-left">
+        <div class="justify-content-start me-auto">
             <%= link_to "Previous Page", set_path(@previous, min_year: @params[:min_year], max_year: @params[:max_year], min_parts: @params[:min_parts], max_parts: @params[:max_parts]), class: "btn btn-outline-dark"%>
         </div>
     <% end %>
     <% if @data["next"] != nil%>
-        <div class="justify-content-right">
+        <div class="justify-content-end ms-auto">
             <%= link_to "Next Page", set_path(@next, min_year: @params[:min_year], max_year: @params[:max_year], min_parts: @params[:min_parts], max_parts: @params[:max_parts]), class: "btn btn-outline-dark"%>
         </div>
     <% end %>
@@ -29,12 +29,12 @@
 
 <nav class="navbar bg-light">
     <% if @data["previous"] != nil%>
-        <div class="justify-content-left">
+        <div class="justify-content-start me-auto">
             <%= link_to "Previous Page", set_path(@previous, min_year: @params[:min_year], max_year: @params[:max_year], min_parts: @params[:min_parts], max_parts: @params[:max_parts]), class: "btn btn-outline-dark"%>
         </div>
     <% end %>
     <% if @data["next"] != nil%>
-        <div class="justify-content-right">
+        <div class="justify-content-end ms-auto">
             <%= link_to "Next Page", set_path(@next, min_year: @params[:min_year], max_year: @params[:max_year], min_parts: @params[:min_parts], max_parts: @params[:max_parts]), class: "btn btn-outline-dark"%>
         </div>
     <% end %>

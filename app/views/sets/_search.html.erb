@@ -1,31 +1,31 @@
 <nav class="navbar navbar-dark bg-secondary ">
-    <div class="container-fluid justify-content-around">
-        <form action=<%=set_path(1)%>% class="d-flex input-control">
-            <select name="min_year" class="form-select">
+    <div class="container-fluid justify-content-around ">
+        <form action=<%=set_path(1)%>% class="d-flex flex-wrap input-control gap-3 justify-content-center">
+            <select name="min_year" class="form-select" style="width: 150px">
                 <option value=<%= nil %>>Min Year</option>
                 <% for year in years do %>
                     <option value=<%= year %>><%= year %></option>
                 <% end %>
             </select>
-            <select name="max_year" class="form-select">
+            <select name="max_year" class="form-select" style="width: 150px">
                 <option value=<%= nil %>>Max Year</option>
                 <% for year in years do %>
                     <option value=<%= year %>><%= year %></option>
                 <% end %>
             </select>
-            <select name="min_parts" class="form-select">
+            <select name="min_parts" class="form-select" style="width: 150px">
                 <option value=<%= nil %>>Min Parts</option>
                 <% for part in parts do %>
                     <option value=<%= part %>><%= part %></option>
                 <% end %>
             </select>
-            <select name="max_parts" class="form-select">
+            <select name="max_parts" class="form-select" style="width: 150px">
                 <option value=<%= nil %>>Max Parts</option>
                 <% for part in parts do %>
                     <option value=<%= part %>><%= part %></option>
                 <% end %>
             </select>
-            <input type="submit" class="btn btn-primary">
+            <input type="submit" value="Search" class="btn btn-primary">
         </form>
     </div>
 </nav>
